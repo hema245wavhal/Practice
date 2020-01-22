@@ -1,6 +1,7 @@
 package testcases;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 import base.Page;
@@ -28,11 +29,14 @@ public class Testcase_AddPAyee extends Page{
 		as.clickpaybillslink();
 		pb=new PayBills(driver);
 		pb.addpayeetab.click();
-		pb.enterdetails("ree", "123", "456", "hi");
+		pb.enterdetails("Hema", "789", "111", "Rent Transfer");
 		System.out.println(pb.handlealert());
 	}
 		
-		
+	  @AfterMethod
+	    public void teardown() {
+	  	  driver.quit();
+	    }
 				
 				
 	}

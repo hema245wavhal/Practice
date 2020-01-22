@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 67.431 s <<< FAILURE! - in TestSuite
+testcases.Testcase_Login.login  Time elapsed: 11.545 s  <<< FAILURE!
+java.lang.AssertionError: expected [Zero - Log in] but found [Zero - Account Summary]
+	at testcases.Testcase_Login.login(Testcase_Login.java:36)
+

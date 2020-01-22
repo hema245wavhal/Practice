@@ -37,7 +37,7 @@ public class Testcase_Transferfunds extends Page{
 		tf=new TransferFunds(driver);
 		tf.selectfromaccount(3);
 		tf.selecttoaccount(4);
-		tf.tfenterdetails("100","transferFunds");
+		tf.tfenterdetails("500","Car Insurance");
 		String expectedtitle = tf.tfalert.getText();  
 		String actualtitle = "You successfully submitted your transaction.";
 		
@@ -45,7 +45,10 @@ public class Testcase_Transferfunds extends Page{
 		Assert.assertEquals(actualtitle, expectedtitle);
 		
 	}		
-	
+	 @AfterMethod
+	    public void teardown() {
+	  	  driver.quit();
+	    }
 
 	}
 	

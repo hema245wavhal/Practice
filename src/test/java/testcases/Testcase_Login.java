@@ -5,6 +5,7 @@ package testcases;
 import org.openqa.selenium.WebDriver;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -41,25 +42,23 @@ public class Testcase_Login extends Page {
 	{
 		ExcelConfig config=new ExcelConfig(System.getProperty("user.dir")+"\\src\\test\\resources\\Excel\\Zerobanking.xlsx");
 		int rows=config.getRowCount("Sheet1");
+		System.out.println("No. of rows display"+rows);
 		Object data[][]=new Object[rows][2];
-		data[0][0]=config.getData("Sheet1", 0, 0);
-		data[0][1]=config.getData("Sheet1", 0, 1);
-		data[1][0]=config.getData("Sheet1", 1, 0);
-		data[1][1]=config.getData("Sheet1", 1, 1);
-		data[2][0]=config.getData("Sheet1", 2, 0);
-		data[2][1]=config.getData("Sheet1", 2, 1);
-		/*
+		
 		for(int i=0;i<rows;i++)
 		{
 			data[i][0]=config.getData("Sheet1", i, 0);
 			data[i][1]=config.getData("Sheet1", i, 1);
 		}
-		*/
+		
 		return data;
 		
 	}
 		
-		
+	 @AfterMethod
+	    public void teardown() {
+	  	  driver.quit();
+	    }
 }
 	
 
